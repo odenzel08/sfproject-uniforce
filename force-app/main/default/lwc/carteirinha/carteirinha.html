@@ -1,6 +1,6 @@
 <template>
     <template lwc:if={matriculaAtiva}>
-        <lightning-card icon-name="standard:account" variant="base">
+        <lightning-card icon-name="standard:drafts" variant="base">
           <div slot="title">Carteira de Identificação Estudantil</div>
           <div class="slds-m-left_medium ">
             <p class="slds-m-bottom_xx-small">
@@ -22,8 +22,11 @@
         </lightning-card>
     </template>
     <template lwc:else>
-        <div class="slds-align_absolute-center">
+        <lightning-card icon-name="standard:drafts" variant="base">
+          <div slot="title">Carteira de Identificação Estudantil</div>
+          <div class="slds-align_absolute-center">
             O aluno com matrícula inativa
-        </div>
+            </div>
+        </lightning-card>  
     </template>
 </template>
