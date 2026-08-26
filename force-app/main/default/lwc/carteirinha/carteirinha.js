@@ -24,10 +24,7 @@ export default class Carteirinha extends LightningElement {
     }
 
     get cursoAluno(){
-        const curso = this.aluno?.Matricula__r?.Curso__r?.Name;
-        return curso ?? 'Sem curso matrículado';
+        return this.aluno?.Matricula__r?.[0]?.Curso__r?.Name ?? 'Sem curso matrículado';
     }
-
-
 
 }
