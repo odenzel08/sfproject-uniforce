@@ -6,6 +6,8 @@ export default class Carteirinha extends LightningElement {
     @api recordId;
     //Armazena os dados do aluno recuperado buscado pelo wire
     aluno;    
+    frente = true;
+    verso = false;
     //Busca o aluno passando o Id do registro como parametro 
     @wire(buscarAluno, { id: '$recordId' })
     wiredAluno({ error, data }){
@@ -25,6 +27,17 @@ export default class Carteirinha extends LightningElement {
 
     get cursoAluno(){
         return this.aluno?.Matricula__r?.[0]?.Curso__r?.Name ?? 'Sem curso matrículado';
+    }
+
+    //Clique no botão
+    handleVirar(){
+        if (this.frente){
+            this.frente = false;
+            this.verso = true;
+        } else if (this.verso){
+            this.verso = false;
+            this.frente = true;
+        }
     }
 
 }

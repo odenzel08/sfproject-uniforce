@@ -1,32 +1,51 @@
 <template>
-    <template lwc:if={matriculaAtiva}>
-        <lightning-card icon-name="standard:drafts" variant="base">
-          <div slot="title">Carteira de Identificação Estudantil</div>
-          <div class="slds-m-left_medium ">
-            <p class="slds-m-bottom_xx-small">
-                <strong>Nome: </strong>{aluno.Name}
-            </p>
-            <p class="slds-m-bottom_xx-small">
-                <strong>CPF: </strong>{aluno.CPF__c}
-            </p>
-            <p class="slds-m-bottom_xx-small">
-                <strong>Instituição de Ensino: </strong>UniForce
-            </p>
-            <p class="slds-m-bottom_xx-small">
-                <strong>Curso: </strong>{cursoAluno}
-            </p>
-            <p class="slds-m-bottom_xx-small">
-                <strong>Data de Nascimento: </strong>{aluno.Data_de_Nascimento__c}
-            </p>
-          </div>
-        </lightning-card>
+    <template lwc:if={frente}>
+        <template lwc:if={matriculaAtiva}>
+            <lightning-card icon-name="standard:drafts" variant="base">
+            <div slot="title">Carteira de Identificação Estudantil</div>
+            <div class="slds-m-left_medium ">
+                <p class="slds-m-bottom_xx-small">
+                    <strong>Nome: </strong>{aluno.Name}
+                </p>
+                <p class="slds-m-bottom_xx-small">
+                    <strong>CPF: </strong>{aluno.CPF__c}
+                </p>
+                <p class="slds-m-bottom_xx-small">
+                    <strong>Instituição de Ensino: </strong>UniForce
+                </p>
+                <p class="slds-m-bottom_xx-small">
+                    <strong>Curso: </strong>{cursoAluno}
+                </p>
+                <p class="slds-m-bottom_xx-small">
+                    <strong>Data de Nascimento: </strong>{aluno.Data_de_Nascimento__c}
+                </p>
+            </div>
+            <div class="slds-p-around_medium">
+                <lightning-button
+                    label="Verso"
+                    variant="brand"
+                    onclick={handleVirar}>
+                </lightning-button>
+            </div>
+            </lightning-card>
+        </template>
+        <template lwc:else>
+            <lightning-card icon-name="standard:drafts" variant="base">
+            <div slot="title">Carteira de Identificação Estudantil</div>
+            <div class="slds-align_absolute-center">
+                Matrícula inativa
+                </div>    
+            </lightning-card>
+        </template>
     </template>
-    <template lwc:else>
-        <lightning-card icon-name="standard:drafts" variant="base">
-          <div slot="title">Carteira de Identificação Estudantil</div>
-          <div class="slds-align_absolute-center">
-            Matrícula inativa
-            </div>    
-        </lightning-card>
+    <template lwc:elseif={verso}>
+        <div>Teste</div>
+        <div class="slds-p-around_medium">
+                <lightning-button
+                    label="Frente" 
+                    variant="brand"
+                    onclick={handleVirar}>
+                </lightning-button>
+            </div>
     </template>
 </template>
