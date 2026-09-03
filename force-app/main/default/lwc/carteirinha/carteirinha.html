@@ -39,13 +39,24 @@
         </template>
     </template>
     <template lwc:elseif={verso}>
-        <div>Teste</div>
-        <div class="slds-p-around_medium">
+        <lightning-card icon-name="standard:drafts" variant="base">
+          <div slot="title">Carteira de Identificação Estudantil</div>
+          <div class="slds-align_absolute-center">
+            <p>
+                <strong>Essa carteira é de uso pessoal e intransferível.</strong>
+            </p>
+          </div>
+          <div class="slds-m-left_medium slds-m-bottom_small">
+            Validade: 12/2026
+          </div>
+          <div class="slds-p-around_medium">
                 <lightning-button
                     label="Frente" 
                     variant="brand"
                     onclick={handleVirar}>
                 </lightning-button>
             </div>
+        </lightning-card>
+        
     </template>
 </template>
