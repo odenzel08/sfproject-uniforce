@@ -97,12 +97,6 @@ Depois do deploy:
 - Tratar o cenário de aluno sem nenhuma matrícula "Cursando" de forma mais explícita na Carteirinha.
 ---
  
-## 📄 Documentação técnica
- 
-Para uma explicação detalhada, componente a componente, veja a documentação técnica anexa (`documentacao-tecnica.html`).
- 
----
- 
 ## 📃 Licença
  
 Projeto pessoal de estudo — livre para reutilização como referência de aprendizado.
